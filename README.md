@@ -312,10 +312,10 @@ curl -O https://raw.githubusercontent.com/ghabrielsoares/docker-logs-automation/
 ---
 
 ### 5. **Tornar o script executável**
-Agora, você precisa garantir que o script `install_docker_and_promtail.sh` tenha permissões de execução. Execute:
+Agora, você precisa garantir que o script `instalacao.sh` tenha permissões de execução. Execute:
 
 ```bash
-chmod +x install_docker_and_promtail.sh
+chmod +x instalacao.sh
 ```
 
 - O comando `chmod +x` adiciona permissões de execução ao arquivo.
@@ -326,7 +326,7 @@ chmod +x install_docker_and_promtail.sh
 Finalmente, execute o script com o seguinte comando:
 
 ```bash
-./install_docker_and_promtail.sh
+./instalacao.sh
 ```
 
 Isso irá executar o script e iniciar o processo de instalação/configuração descrito nele.
@@ -339,15 +339,16 @@ Para facilitar, aqui está um resumo rápido de tudo o que foi descrito acima:
 
 ```bash
 sudo apt update && sudo apt upgrade -y
-git --version
-sudo apt install git -y
-git clone <URL_DO_REPOSITORIO>
-cd <PASTA_DO_REPOSITORIO>
-chmod +x install_docker_and_promtail.sh
-./install_docker_and_promtail.sh
+wget <URL_DO_CODIGO>
+ou
+curl -O <URL_DO_CODIGO>
+chmod +x instalacao.sh
+./instalacao.sh
 ```
 
-Substitua `<URL_DO_REPOSITORIO>` e `<PASTA_DO_REPOSITORIO>` pelas informações reais do repositório.
+Substitua `<URL_DO_CODIGO>` pelas informações reais do repositório.
+
+Ao baixar o arquivo, abra-o e substitua `USER_PASSWORD="12345"` pela sua senha da maquina.
 
 Com isso, o seu script será baixado, tornado executável! 😊
 
