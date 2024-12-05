@@ -299,52 +299,14 @@ sudo apt update && sudo apt upgrade -y
 
 ---
 
-### 2. **Verificar se o `git` está instalado**
-O `git` é necessário para clonar repositórios do GitHub. Para verificar se ele está instalado, execute o comando:
-
-```bash
-git --version
-```
-
-ou
-
-```bash
-git -v
-```
-
-Se o `git` estiver instalado, o terminal exibirá a versão atual do `git` (ex.: `git version 2.x.x`). Caso contrário, será necessário instalá-lo.
-
----
-
-### 3. **Instalar o `git` (se necessário)**
-Se o `git` não estiver instalado, instale-o com o comando:
-
-```bash
-sudo apt install git -y
-```
-
-Após a instalação, verifique novamente com o comando `git --version` para confirmar que está funcionando.
-
----
-
 ### 4. **Baixar o arquivo do repositório GitHub**
-Com o `git` instalado, você pode clonar o repositório que contém o script `install_docker_and_promtail.sh`. Substitua `<URL_DO_REPOSITORIO>` pelo endereço do repositório desejado no GitHub:
-
+Você pode usar `wget` ou `curl` para baixar diretamente o arquivo bruto do GitHub, caso o repositório esteja público. Use o link bruto do arquivo, que pode ser acessado clicando em "Raw" no GitHub. Por exemplo:
 ```bash
-git clone <URL_DO_REPOSITORIO>
+wget https://raw.githubusercontent.com/ghabrielsoares/docker-logs-automation/main/instalacao.sh
 ```
-
-Exemplo:
-Se o repositório for `https://github.com/usuario/projeto.git`, o comando será:
-
+Ou com `curl`:
 ```bash
-git clone https://github.com/usuario/projeto.git
-```
-
-Após clonar o repositório, entre no diretório baixado. Supondo que o repositório seja chamado `projeto`, o comando será:
-
-```bash
-cd projeto
+curl -O https://raw.githubusercontent.com/ghabrielsoares/docker-logs-automation/main/instalacao.sh
 ```
 
 ---
