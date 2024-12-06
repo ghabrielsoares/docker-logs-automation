@@ -300,7 +300,7 @@ sudo apt update && sudo apt upgrade -y
 ---
 
 ### 4. **Baixar o arquivo do repositório GitHub**
-Você pode usar `wget` ou `curl` para baixar diretamente o arquivo bruto do GitHub, caso o repositório esteja público. Use o link bruto do arquivo, que pode ser acessado clicando em "Raw" no GitHub. Por exemplo:
+Você pode usar `wget` ou `curl` para baixar diretamente o arquivo bruto do GitHub. wget <URL_DO_CODIGO> ou curl -O <URL_DO_CODIGO>:
 ```bash
 wget https://raw.githubusercontent.com/ghabrielsoares/docker-logs-automation/main/instalacao.sh
 ```
