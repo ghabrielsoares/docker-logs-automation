@@ -50,8 +50,8 @@ if ! command -v docker-compose &>/dev/null; then
 fi
 
 # Cria estrutura de pastas e arquivos
-mkdir -p ./home/gabrielcs2/live/promtail/config live/promtail/position var/log
-cat > ./home/gabrielcs2/live/promtail/config/config.yaml <<EOF
+mkdir -p /docker/promtail/config live/promtail/position var/log
+cat > /docker/promtail/config/config.yaml <<EOF
 server:
   http_listen_port: 9080
   grpc_listen_port: 0
