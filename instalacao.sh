@@ -50,8 +50,8 @@ if ! command -v docker-compose &>/dev/null; then
 fi
 
 # Cria estrutura de pastas e arquivos
-mkdir -p /docker/promtail/config live/promtail/position var/log
-cat > /docker/promtail/config/config.yaml <<EOF
+mkdir -p $HOME/docker/promtail/config docker/promtail/position var/log
+cat > $HOME/docker/promtail/config/config.yaml <<EOF
 server:
   http_listen_port: 9080
   grpc_listen_port: 0
@@ -72,7 +72,7 @@ scrape_configs:
       _path_: /logs/syslogs/*log
 EOF
 
-cat > live/docker-compose.yaml <<EOF
+cat > docker/docker-compose.yaml <<EOF
 networks:
   loki:
     driver: bridge
@@ -112,7 +112,7 @@ services:
 EOF
 
 # Sobe os serviços com Docker Compose
-run_with_sudo "docker-compose -f live/docker-compose.yaml up -d"
+run_with_sudo "docker-compose -f docker/docker-compose.yaml up -d"
 
 # Adiciona o usuário ao grupo do Docker
 run_with_sudo "usermod -aG docker $USER"
